@@ -1,0 +1,65 @@
+body{
+    text-align: center;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+button{
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(0, 0, 255);
+    border: 0px solid blue;
+    font-weight: bold;
+}
+
+.table_wrapper{
+    display: flex;
+    gap: 30px;
+}
+
+.t_products{
+    height: 400px;
+    width: 600px;
+    overflow-y: auto;
+    overflow-x: auto;
+    display: block;
+    border: 1px solid black;
+}
+
+.t_cart{
+    height: 300px;
+    width: 500px;
+    overflow-y: auto;
+    display: block;
+    border: 1px solid black;
+}
+
+#head1{
+    margin-top: 35px;
+    font-size: 40px;
+}
+
+#head2{
+    color: red;
+}
+
+#table1 thead, #table2 thead{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+#l_label{
+    font-size: 20px;
+    color: white;
+    background-color: black;
+}
+
+#total{
+    color: rgb(0, 255, 0);
+}

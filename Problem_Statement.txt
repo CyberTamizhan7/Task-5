@@ -1,0 +1,11 @@
+1. Create a PHP page with 20 products of 4 different categories 
+   (Electronics, Clothes, Appliances, Accessories) with unique SKU ID.
+
+2. The Quantity limiter should be between 1 to 1000. 
+
+3. Add to Cart must add the product to the cart below 
+   (display it as a table with delete option). 
+
+4. Pagination must be present. 
+
+5. Search field is optional.
