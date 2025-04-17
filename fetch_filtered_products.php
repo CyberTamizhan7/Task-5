@@ -6,7 +6,7 @@
     $product_category = $_POST['product_category'];
 
     if($product_name == "" && $product_category == "all"){
-        $sql_fetch_all_data = "SELECT SKU_ID, Name, Category, Price FROM Products;";
+        $sql_fetch_all_data = "SELECT Products.SKU_ID, Name, Category, Price FROM Products JOIN Categories ON Products.SKU_ID = Categories.SKU_ID;";
         $result = $conn->query($sql_fetch_all_data);
 
         $filtered_products = [];
@@ -18,7 +18,7 @@
     }
 
     else if($product_name == ""){
-        $sql_fetch_all_data = "SELECT SKU_ID, Name, Category, Price FROM Products WHERE Category = '$product_category';";
+        $sql_fetch_all_data = "SELECT Products.SKU_ID, Name, Category, Price FROM Products JOIN Categories ON Products.SKU_ID = Categories.SKU_ID WHERE Category = '$product_category';";
         $result = $conn->query($sql_fetch_all_data);
 
         $filtered_products = [];
@@ -30,7 +30,7 @@
     }
 
     else if($product_name!="" && $product_category!="all"){
-        $sql_fetch_filtered_data = "SELECT SKU_ID, Name, Category, Price FROM Products WHERE Name = '$product_name' AND Category = '$product_category';";
+        $sql_fetch_filtered_data = "SELECT Products.SKU_ID, Name, Category, Price FROM Products JOIN Categories ON Products.SKU_ID = Categories.SKU_ID WHERE Name = '$product_name' AND Category = '$product_category';";
         $result = $conn->query($sql_fetch_filtered_data);
         
         $filtered_products = [];
@@ -42,7 +42,7 @@
     }
 
     else{
-        $sql_fetch_filtered_data = "SELECT SKU_ID, Name, Category, Price FROM Products WHERE Name = '$product_name';";
+        $sql_fetch_filtered_data = "SELECT Products.SKU_ID, Name, Category, Price FROM Products JOIN Categories ON Products.SKU_ID = Categories.SKU_ID WHERE Name = '$product_name';";
         $result = $conn->query($sql_fetch_filtered_data);
         
         $filtered_products = [];

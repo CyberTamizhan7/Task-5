@@ -3,7 +3,7 @@
     include('connection.php');
     include('creation.php');
 
-    $sql_products = "SELECT SKU_ID, Name, Category, Price FROM Products;";
+    $sql_products = "SELECT Products.SKU_ID, Products.Name, Categories.Category, Products.Price FROM Products JOIN Categories ON Products.SKU_ID = Categories.SKU_ID;";
     $result = $conn->query($sql_products);
 
     $products = [];
